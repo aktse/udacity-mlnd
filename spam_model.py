@@ -16,8 +16,21 @@ df = pd.read_table('smsspamcollection/SMSSpamCollection',
                     names = ['label', 'sms_messages'])
 
 # Take a look
-print(df.head())
+# print(df.head())
 
+# 1.2 Preprocessing
+# - Convert the values in the 'label' colum to numerical values using map
+# method as follows: {'ham':0, 'spam':1} This maps the 'ham' value to 0 and
+# the 'spam' value to 1.
+# - Also, to get an idea of the size of the dataset we are dealing with, print
+# out number of rows and columns using 'shape'.
 
+# Convert labels to [0, 1]
+# Define mapping
+mapping = {'ham' : 0, 'spam': 1}
+# Apply mapping
+df.label = df.label.map(mapping)
 
+# Get an understanding of the size
+# print(df.shape)
 
