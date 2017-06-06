@@ -84,17 +84,44 @@ frequency_list = preprocessed_documents.apply(lambda x: Counter(x))
 
 # print(frequency_list)
 
+# 2.3 BoW with Sklearn
 
+# 2.3.1 Importing
+# - Import the sklearn.feature_extraction.text.CountVectorizer
+# method and create an instance of it called 'count_vector'.
+from sklearn.feature_extraction.text import CountVectorizer
 
+count_vector = CountVectorizer()
 
+# 2.3.2 Using the CountVectorizer
+# - Fit your document dataset to the CountVectorizer object you have created
+# using fit(), and get the list of words which have been categorized as
+# features using the get_feature_names() method.
 
+count_vector.fit(df.sms_messages)
 
+# print(count_vector.get_feature_names())
 
+# 2.3.3 Create the count frequency matrix
+# Create a matrix with the rows being each of the 4 documents, and the columns
+# being each word. The corresponding (row, column) value is the frequency of
+# occurrance of that word(in the column) in a particular document(in the row).
+# You can do this using the transform() method and passing in the document data
+# set as the argument. The transform() method returns a matrix of numpy integers,
+# you can convert this to an array using toarray(). Call the array 'doc_array'
 
+doc_array = count_vector.transform(df.sms_messages).toarray()
+# print(doc_array)
 
+# 2.3.4 Convert Frequency Matrix to Dataframe
+# Convert the array we obtained, loaded into 'doc_array', into a dataframe and
+# set the column names to the word names(which you computed earlier using
+# get_feature_names(). Call the dataframe 'frequency_matrix'.
 
+columns = count_vector.get_feature_names()
+frequency_matrix = pd.DataFrame(doc_array, columns = columns)
 
-
+# print(frequency_matrix.head())
 
 
 
