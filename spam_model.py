@@ -123,8 +123,24 @@ frequency_matrix = pd.DataFrame(doc_array, columns = columns)
 
 # print(frequency_matrix.head())
 
+# 3.1 Training and testing sets
+# - Split the dataset into a training and testing set by using the train_test_split
+# method in sklearn. Split the data using the following variables:
+#     X_train is our training data for the 'sms_message' column.
+#     y_train is our training data for the 'label' column
+#     X_test is our testing data for the 'sms_message' column.
+#     y_test is our testing data for the 'label' column
+# - Print out the number of rows we have in each our training and testing data.
 
+from sklearn.model_selection import train_test_split
 
+x_train, x_test, y_train, y_test = train_test_split(df.sms_messages, df.label)
+
+# print("Num rows in x_train: " + str(x_train.size))
+# print("Num rows in x_test: " + str(x_test.size))
+# print("Num rows in y_train: " + str(y_train.size))
+# print("Num rows in y_test: " + str(y_test.size))
+# print("Total num rows: " + str(len(df)))
 
 
 
