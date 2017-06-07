@@ -142,9 +142,13 @@ x_train, x_test, y_train, y_test = train_test_split(df.sms_messages, df.label)
 # print("Num rows in y_test: " + str(y_test.size))
 # print("Total num rows: " + str(len(df)))
 
-
-
-
+# 3.2 Applying BoW to our dataset
+# - Firstly, we have to fit our training data (X_train) into CountVectorizer()
+# and return the matrix.
+# - Secondly, we have to transform our testing data (X_test) to return the matrix.
+cv = CountVectorizer()
+training_data = cv.fit_transform(x_train)
+testing_data = cv.transform(x_test)
 
 
 
