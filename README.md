@@ -4,18 +4,17 @@
 
 ### Naive Bayes Practice Project
 ___
-[Code](/projects/naive_bayes/spam_model.py)
-
-[README](/projects/naive_bayes/README.md)
+[Link](/projects/naive_bayes/)
+| [Code](/projects/naive_bayes/spam_model.py)
+| [README](/projects/naive_bayes/README.md)
 
 ### Enron Datasets & Questions Practice Project
 ___
-[Code](https://github.com/aktse/ud120-projects/blob/master/datasets_questions/explore_enron_data.py)
+[Link](https://github.com/aktse/ud120-projects/blob/master/datasets_questions/explore_enron_data.py)
 
 ### Titanic Survival Exploration
 ---
-[Workbook (.ipynb)](/projects/titanic_survival_exploration/titanic_survival_exploration.ipynb)
-
-[Html of workbook](/projects/titanic_survival_exploration/titanic_survival_exploration.html)
-
-[README](/projects/titanic_survival_exploration/README.md)
+[Link](/projects/titanic_survival_exploration/)
+| [Workbook (.ipynb)](/projects/titanic_survival_exploration/titanic_survival_exploration.ipynb)
+| [Html of workbook](/projects/titanic_survival_exploration/titanic_survival_exploration.html)
+| [README](/projects/titanic_survival_exploration/README.md)
