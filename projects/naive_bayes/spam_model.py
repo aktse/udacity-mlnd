@@ -363,8 +363,73 @@ clf.fit(training_data, y_train)
 
 predictions = clf.predict(testing_data)
 
+# 6 Evaluating Our Model
+# ===================================================================================
+# Now that we have made predictions on our test set, our next goal is to evaluate how
+# well our model is doing. There are various mechanisms for doing so, but first let's
+# do quick recap of them.
+#
+# Accuracy measures how often the classifier makes the correct prediction. It’s the
+# ratio of the number of correct predictions to the total number of predictions
+# (the number of test data points).
+#
+# Precision tells us what proportion of messages we classified as spam, actually were
+# spam. It is a ratio of true positives(words classified as spam, and which are
+# actually spam) to all positives(all words classified as spam, irrespective of whether
+# that was the correct classificatio), in other words it is the ratio of
+#           [True Positives/(True Positives + False Positives)]
+#
+# Recall(sensitivity) tells us what proportion of messages that actually were spam
+# were classified by us as spam. It is a ratio of true positives(words classified as
+# spam, and which are actually spam) to all the words that were actually spam,
+# in other words it is the ratio of
+#           [True Positives/(True Positives + False Negatives)]
+#
+# The Precision and REcall can be combined to get the F1 score, which is the weighted
+# average of the precision and recall scores. It ranges from 0 to 1 with 1 being the
+# best score
+# ===================================================================================
+
+# 6.1 Computing accuracy, precision, recall, F1
+# ===================================================================================
+# Compute the accuracy, precision, recall and F1 scores of your model using your
+# test data 'y_test' and the predictions you made earlier stored in the 'predictions'
+# variable.
+# ===================================================================================
+fp = tp = fn = tn = 0
+for i in range(0, predictions.size):
+    pi = predictions[i]
+    yi = y_test.data[i]
+
+    if (pi == yi):
+        if (pi == 0): # True negative
+            tn += 1
+        else: # True positive
+            tp += 1
+    else:
+        if (pi == 0): # False negative
+            fn += 1
+        else: # False positive
+            fp += 1
+
+accuracy = (tn + tp) / predictions.size
+precision = tp / (tp + fp)
+recall = tp / (tp + fn)
+f1 = 2 * (precision * recall)/(precision + recall) # As stated on wikipedia
+
+print("My attempt at manually calculating: ")
+print("\tAccuracy is: " + str(accuracy))
+print("\tPrecision is: " + str(precision))
+print("\tRecall is: " + str(recall))
+print("\tF1 score is: " + str(f1))
 
 
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+print("SKlearn metrics: ")
+print("\tAccuracy is: " + str(accuracy_score(y_test, predictions)))
+print("\tPrecision is: " + str(precision_score(y_test, predictions)))
+print("\tRecall is: " + str(recall_score(y_test, predictions)))
+print("\tF1 score is: " + str(f1_score(y_test, predictions)))
 
 
 
