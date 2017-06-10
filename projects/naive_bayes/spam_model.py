@@ -325,12 +325,43 @@ p_g_fi = p_g_text / p_f_i # 93.33%
 # print("The probability of the speaker being Gary, given the words 'Freedom' and 'Immigration' \
 # were said is: " + str(p_g_fi * 100) + "%")
 
+# 5 Naive Bayes w/ Scikit-Learn
+# ===================================================================================
+# (Back to spam detection)
+# We have loaded the training data into the variable 'training_data' and the testing
+# data into the variable 'testing_data'.
+#
+# Thankfully, sklearn has several Naive Bayes implementations that we can use and so
+# we do not have to do the math from scratch. We will be using sklearns
+# sklearn.naive_bayes method to make predictions on our dataset.
+#
+# Specifically, we will be using the multinomial Naive Bayes implementation. This
+# particular classifier is suitable for classification with discrete features
+# (such as in our case, word counts for text classification). It takes in integer
+# word counts as its input. On the other hand Gaussian Naive Bayes is better suited
+# for continuous data as it assumes that the input data has a Gaussian(normal) distribution.
+# ===================================================================================
 
+# 5.1 Training
+# ===================================================================================
+# Import the MultinomialNB classifier and fit the training data into the classifier
+# using fit(). Name your classifier 'naive_bayes'. You will be training the classifier
+# using 'training_data' and y_train' from our split earlier.
+# ===================================================================================
 
+from sklearn.naive_bayes import MultinomialNB
 
+clf = MultinomialNB()
+clf.fit(training_data, y_train)
 
+# 5.2 Predict
+# ===================================================================================
+# Now that our algorithm has been trained using the training data set we can now make
+# some predictions on the test data stored in 'testing_data' using predict().
+# Save your predictions into the 'predictions' variable.
+# ===================================================================================
 
-
+predictions = clf.predict(testing_data)
 
 
 
