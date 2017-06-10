@@ -1,6 +1,6 @@
 # Udacity Machine Learning Engineer Nanodegree Projects
 
-[Project Descriptions](https://github.com/udacity/machine-learning)
+[Project Repo](https://github.com/udacity/machine-learning)
 
 ### Naive Bayes Practice Project
 ___
