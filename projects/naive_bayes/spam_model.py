@@ -150,12 +150,58 @@ cv = CountVectorizer()
 training_data = cv.fit_transform(x_train)
 testing_data = cv.transform(x_test)
 
+# 4.1 Bayes Theorem From Scratch
+# Let us implement the Bayes Theorem from scratch using a simple example.
+# Let's say we are trying to find the odds of an individual having diabetes,
+# given that he or she was tested for it and got a positive result.
+# In the medical field, such probabilies play a very important role as it usually
+# deals with life and death situatuations.
 
+# P(D) is the probability of a person having Diabetes.
+#     It's value is 0.01 or in other words, 1% of the general population has diabetes.
+# P(Pos) is the probability of getting a positive test result.
+# P(Neg) is the probability of getting a negative test result.
+# P(Pos|D) is the probability of getting a positive result on a test done for detecting
+#     diabetes, given that you have diabetes. This has a value 0.9. (Sensitivity)
+# P(Neg|~D) is the probability of getting a negative result on a test done for detecting
+#     diabetes, given that you do not have diabetes. This also has a value of 0.9. (Specificity)
+# Putting our values into the formula for Bayes theorem we get:
+#     P(D|Pos) = (P(D) * P(Pos|D)) / P(Pos)
+#     P(Pos) = [P(D) * Sensitivity] + [P(~D) * (1-Specificity))]
 
+# 4.1.1
+# Calculate probability of getting a positive test result, P(Pos)
 
+# P(D)
+p_diabetes = 0.01
+# P(~D)
+p_no_diabetes = 0.99
+# Sensitivity P(pos|D)
+p_sens = 0.9
+# Specificity P(neg|~D)
+p_spec = 0.9
 
+p_pos = (p_diabetes * p_sens) + (p_no_diabetes * (1-p_spec))
 
+# print("The probabilitiy of getting a positive test result is: " + str(p_pos * 100) + "%")
 
+# 4.1.2
+# Compute the probability of an individual having diabetes, given that, that individual
+# got a positive test result. In other words, compute P(D|Pos).
+p_diabetes_given_pos = (p_diabetes * p_sens) / p_pos
+
+# print("The probability of having diabetes given a positive test result is: "
+#    + str(p_diabetes_given_pos * 100) + "%")
+
+# 4.1.3
+# Compute the probability of an individual not having diabetes, given that, that individual
+# got a positive test result. In other words, compute P(~D|Pos).
+# P(~D|Pos) = (P(~D) * P(Pos|~D)) / P(Pos)
+p_pos_no_diabetes = 1 - p_spec # P(Pos|~D) = 1 - P(Neg|~D)
+p_no_diabetes_given_pos = p_no_diabetes * p_pos_no_diabetes / p_pos
+
+# print("The proability of not having diabetes given a positive test result is: "
+#    + str(p_no_diabetes_given_pos * 100) + "%")
 
 
 
