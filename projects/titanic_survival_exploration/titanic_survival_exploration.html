@@ -13219,6 +13219,18 @@ Make sure to keep track of the various features and conditions you tried before 
         <span class="c1"># Pclass + females (Most females of class 1 and 2 survived but class 3 was 50/50)</span>
         <span class="c1"># Pclass + females + age (Females over 40 in class 3 didn&#39;t survive) - Reached 80.25% accuracy</span>
         
+        <span class="c1"># Were certain features more informative?</span>
+        <span class="c1"># - Yes, Pclass suggested that class 1 and class 2 passengers received some preferential treatment (or maybe they</span>
+        <span class="c1"># were just closer to the lifeboats)</span>
+        <span class="c1"># - Sex and Age were very informative as most females and children survived (ladies and kids first?)</span>
+        <span class="c1"># - Others such as Parch and Sibsp were less informative on their own but perhaps if combined with the </span>
+        <span class="c1"># right features could become more informative (parents let their kids on first, husbands let their wives etc.) </span>
+        
+        <span class="c1"># Conditions used to split the survival outcomes</span>
+        <span class="c1"># If female and not in class 3 and younger than 40, then survive</span>
+        <span class="c1"># If male and younger than 10, then survive</span>
+        <span class="c1"># Everyone else doesn&#39;t survive</span>
+        
         <span class="c1"># Remove the &#39;pass&#39; statement below </span>
         <span class="c1"># and write your prediction conditions here</span>
         <span class="k">if</span> <span class="n">passenger</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span><span class="p">:</span>
