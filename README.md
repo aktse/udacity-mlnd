@@ -18,3 +18,10 @@ ___
 | [Workbook (.ipynb)](/projects/titanic_survival_exploration/titanic_survival_exploration.ipynb)
 | [Html of workbook](/projects/titanic_survival_exploration/titanic_survival_exploration.html)
 | [README](/projects/titanic_survival_exploration/README.md)
+
+### Predicting Boston Housing Prices
+___
+[Link](/projects/boston_housing/)
+| [Workbook (.pynb)](/projects/boston_housing/boston_housing.ipynb)
+| [Html of workbook](/projects/boston_housing/boston_housing.html)
+| [README](/projects/boston_housing/README.md)
