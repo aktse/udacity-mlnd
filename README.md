@@ -25,3 +25,10 @@ ___
 | [Workbook (.pynb)](/projects/boston_housing/boston_housing.ipynb)
 | [Html of workbook](/projects/boston_housing/boston_housing.html)
 | [README](/projects/boston_housing/README.md)
+
+### Finding Donors for CharityML
+___
+[Link](/projects/finding_donors/)
+| [Workbook (.pynb)](/projects/finding_donors/finding_donors.ipynb)
+| [Html of workbook](/projects/finding_donors/finding_donors.html)
+| [README](/projects/finding_donors/README.md)
